@@ -10,7 +10,7 @@ body {
               'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 25%, #ff6b9d 50%, #c471ed 75%, #12c2e9 100%);
+  background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 33%, #c471ed 66%, #12c2e9 100%);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
   min-height: 100vh;
