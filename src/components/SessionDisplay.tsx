@@ -20,23 +20,9 @@ const SessionDisplay: React.FC<SessionDisplayProps> = ({ sessionType, completedS
     }
   }
 
-  const getSessionEmoji = (type: SessionType): string => {
-    switch (type) {
-      case 'work':
-        return '🍅'
-      case 'shortBreak':
-        return '☕'
-      case 'longBreak':
-        return '🌴'
-      default:
-        return '🍅'
-    }
-  }
-
   return (
     <div className="session-display">
       <div className="session-type">
-        <span className="session-emoji">{getSessionEmoji(sessionType)}</span>
         <span className="session-label">{getSessionLabel(sessionType)}</span>
       </div>
       <div className="session-counter">

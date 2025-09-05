@@ -138,7 +138,12 @@
   font-size: 1rem;
   font-weight: 600;
   transition: all 0.2s ease;
-  min-width: 120px;
+  min-width: 140px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .control-button.primary {
@@ -196,7 +201,7 @@
   }
 
   .control-button {
-    min-width: 100px;
+    min-width: 120px;
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
   }

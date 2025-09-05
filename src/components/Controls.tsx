@@ -13,21 +13,21 @@ const Controls: React.FC<ControlsProps> = ({ controls, isRunning }) => {
         className={`control-button primary ${isRunning ? 'pause' : 'start'}`}
         onClick={isRunning ? controls.pause : controls.start}
       >
-        {isRunning ? '⏸️ 一時停止' : '▶️ 開始'}
+        {isRunning ? '一時停止' : '開始'}
       </button>
 
       <button
         className="control-button secondary"
         onClick={controls.reset}
       >
-        🔄 リセット
+        リセット
       </button>
 
       <button
         className="control-button secondary"
         onClick={controls.skip}
       >
-        ⏭️ スキップ
+        スキップ
       </button>
     </div>
   )
