@@ -23,7 +23,7 @@ const SESSION_DURATIONS = {
   longBreak: 15 * 60, // 15 minutes
 }
 
-export const usePomodoro = () => {
+export const usePomodoro = (onSessionComplete?: (sessionType: SessionType) => void) => {
   const [sessionType, setSessionType] = useState<SessionType>('work')
   const [timeLeft, setTimeLeft] = useState(SESSION_DURATIONS.work)
   const [isRunning, setIsRunning] = useState(false)
@@ -47,10 +47,12 @@ export const usePomodoro = () => {
       setCompletedSessions(prev => prev + 1)
     }
 
+    onSessionComplete?.(nextSessionType)
+
     setSessionType(nextSessionType)
     setTimeLeft(SESSION_DURATIONS[nextSessionType])
     setIsRunning(false)
-  }, [sessionType, getNextSessionType])
+  }, [sessionType, getNextSessionType, onSessionComplete])
 
   useEffect(() => {
     if (isRunning && timeLeft > 0) {

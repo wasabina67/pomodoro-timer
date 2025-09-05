@@ -1,12 +1,14 @@
 import './App.css'
 import { usePomodoro } from './hooks/usePomodoro'
+import { useNotifications } from './hooks/useNotifications'
 import Timer from './components/Timer'
 import SessionDisplay from './components/SessionDisplay'
 import ProgressBar from './components/ProgressBar'
 import Controls from './components/Controls'
 
 function App() {
-  const { state, controls } = usePomodoro()
+  const { sendNotification } = useNotifications()
+  const { state, controls } = usePomodoro(sendNotification)
 
   return (
     <div className="app">
