@@ -10,13 +10,13 @@ const SessionDisplay: React.FC<SessionDisplayProps> = ({ sessionType, completedS
   const getSessionLabel = (type: SessionType): string => {
     switch (type) {
       case 'work':
-        return '作業時間'
+        return 'Work'
       case 'shortBreak':
-        return '短休憩'
+        return 'Short Break'
       case 'longBreak':
-        return '長休憩'
+        return 'Long Break'
       default:
-        return '作業時間'
+        return 'Work'
     }
   }
 
@@ -26,7 +26,7 @@ const SessionDisplay: React.FC<SessionDisplayProps> = ({ sessionType, completedS
         <span className="session-label">{getSessionLabel(sessionType)}</span>
       </div>
       <div className="session-counter">
-        完了セッション: {completedSessions}
+        Completed Sessions: {completedSessions}
       </div>
     </div>
   )
