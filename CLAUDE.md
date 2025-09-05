@@ -25,7 +25,7 @@ This is a React + TypeScript Pomodoro timer application using Vite as the build 
 - Automatically switches to long break every 4th completed work session
 
 **Component Architecture**:
-- `App.tsx` - Main container that consumes `usePomodoro` hook
+- `App.tsx` - Main container that consumes `usePomodoro` and `useNotifications` hooks
 - `Timer.tsx` - Displays current time remaining
 - `SessionDisplay.tsx` - Shows current session type and completed sessions count
 - `ProgressBar.tsx` - Visual progress indicator
@@ -36,8 +36,14 @@ This is a React + TypeScript Pomodoro timer application using Vite as the build 
 - State includes: `sessionType`, `timeLeft`, `isRunning`, `completedSessions`, `progress`
 - Controls: `start`, `pause`, `reset`, `skip`
 
+**Notification Hook**: `src/hooks/useNotifications.ts`
+- Browser Notification API integration
+- Automatic permission request on first use
+- Session completion notifications
+
 ### Key Implementation Details
 - Uses `setInterval` with cleanup for timer functionality
 - Progress calculation: `(SESSION_DURATIONS[sessionType] - timeLeft) / SESSION_DURATIONS[sessionType]`
 - Automatic session switching when timer reaches zero
 - Work session completion increments counter before switching to break
+- Browser notifications sent when timer reaches zero for each session type
