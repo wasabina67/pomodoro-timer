@@ -13,9 +13,10 @@ body {
   background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 33%, #c471ed 66%, #12c2e9 100%);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
+  height: 100vh;
   min-height: 100vh;
   color: #2c3e50;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 @keyframes gradientShift {
@@ -32,10 +33,12 @@ body {
 
 #root {
   width: 100%;
+  height: 100vh;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 button {
